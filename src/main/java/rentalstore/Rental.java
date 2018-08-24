@@ -16,4 +16,12 @@ public class Rental {
     public int getDayRented() {
         return dayRented;
     }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public void setDayRented(int dayRented) {
+        this.dayRented = dayRented;
+    }
 }
