@@ -17,7 +17,7 @@ public abstract class Statement {
             //add frequent renter points
             frequentRenterPoints ++;
             //add bonus for a two day new release rental
-            if((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDayRented() > 1){
+            if((each.getMovie() instanceof NEW_RELEASE) && each.getDayRented() > 1){
                 frequentRenterPoints ++;
             }
 
@@ -33,24 +33,8 @@ public abstract class Statement {
 
     private double getThisAmount(Rental each) {
         double thisAmount = 0;
-
-        switch (each.getMovie().getPriceCode()){
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if(each.getDayRented() > 2){
-                    thisAmount+=(each.getDayRented() - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount+=each.getDayRented()*3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount+=1.5;
-                if(each.getDayRented() > 3){
-                    thisAmount += (each.getDayRented() -3)*1.5;
-                }
-                break;
-        }
+        Movie movie = each.getMovie();
+        thisAmount = movie.getAmount(each);
         return thisAmount;
     }
 
