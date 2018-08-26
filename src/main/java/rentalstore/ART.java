@@ -1,17 +1,17 @@
 package rentalstore;
 
-public class REGULAR extends Movie {
-    public REGULAR(String title) {
+public class ART extends Movie {
+    public ART(String title) {
         super(title);
     }
 
     @Override
     public Double getAmount(Rental rental) {
-        return 2+(rental.getDayRented() > 2?(rental.getDayRented() - 2) * 1.5:0);
+        return 6.0*rental.getDayRented();
     }
 
     @Override
     public Double getFrequentRenterPoints(Rental rental) {
-        return 1.0;
+        return 1.5;
     }
 }

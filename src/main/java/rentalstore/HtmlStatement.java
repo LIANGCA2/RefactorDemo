@@ -4,7 +4,7 @@ import java.util.Enumeration;
 
 public class HtmlStatement extends Statement {
 
-    protected  String getFooter(double totalAmount, int frequentRenterPoints) {
+    protected  String getFooter(double totalAmount, Double frequentRenterPoints) {
         return "<P>You owe<EM>" + String.valueOf(totalAmount) + "</EM><P>\n"+
         "On this rental you earned <EM>" + String.valueOf(frequentRenterPoints) +
                 "</EM> frequent renter points<P>";

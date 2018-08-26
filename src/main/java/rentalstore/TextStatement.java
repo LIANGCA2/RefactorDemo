@@ -4,7 +4,7 @@ import java.util.Enumeration;
 
 public class TextStatement extends Statement{
 
-    protected  String getFooter(double totalAmount, int frequentRenterPoints) {
+    protected  String getFooter(double totalAmount, Double frequentRenterPoints) {
         return "Amount owed is " + String.valueOf(totalAmount) + "\n"+
         "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
     }

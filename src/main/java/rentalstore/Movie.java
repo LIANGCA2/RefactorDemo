@@ -18,4 +18,8 @@ public class Movie {
     public Double getAmount(Rental each){
         return null;
     }
+
+    public Double getFrequentRenterPoints(Rental each) {
+        return null;
+    }
 }
