@@ -8,6 +8,10 @@ public class Movie {
     private String title;
     private int priceCode;
 
+    public Movie(){
+
+    }
+
     public Movie(String title, int priceCode) {
         this.title = title;
         this.priceCode = priceCode;
@@ -23,5 +27,8 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+    public Double getAmount(Rental each){
+        return null;
     }
 }
